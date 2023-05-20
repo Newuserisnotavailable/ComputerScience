@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+<link rel="stylesheet" type="text/css" href="JavaStyle.css">
+</head>
+<body>
+  <h2>Login</h2>
+  <form id="loginForm">
+    <label for="username">Username: Hint: Username is Admin</label>
+    <input type="text" id="username" required><br><br>
+    <label for="password">Password: Hint: Password is Password</label>
+    <input type="password" id="password" required><br><br>
+    <input type="submit" value="Login">
+  </form>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      if (username === "Admin" && password === "Password") {
+        alert("Login successful!");
+        window.location.href = "CSProject.html";
+      } else {
+        alert("Invalid username or password. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
